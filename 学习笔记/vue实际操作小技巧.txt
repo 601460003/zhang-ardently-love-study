@@ -1,0 +1,44 @@
+                                     1.点击事件判断密码显示或隐藏技巧利用1--0 (初始化一个值var isShow=0)
+this.isShow = this.isShow ? 0 : 1
+this.isShow ? this.passType = 'text' : this.passType = 'password'
+
+                                     2.登录小技巧，使用push路由跳转会出现后退有历史记录，而replace直接替换地址没有history
+<router-link :to="{name: 'RegisterView'}"replace>这个方法同样可以。
+
+                                     3.路由跳转的区别：path 就是路径嘛，name相当于该路径的别名
+1.通过name属性，为一个页面中不同的router-view渲染不同的组件,如：<router-view  name="Hello">
+2.页面渲染时传递参数<router-link ：to="{name:'hello', params:{id: '12'}}">
+
+                                     4.常用的输入框路由参数跳转方法（用来搜索商品到相应的页面）
+1.<input type="search" name="query" v-model.trim.lazy="queryStr" @keyup.enter="goSearch()">
+2.methods：this.$router.push({name: 'SearchView', params: {q: this.queryStr}
+
+                                     5.父子之间的传递props的知识点
+1.required（是否必须传递）
+2.default（如果没有传递的默认值）
+3.type（接受的属性是必须的）
+ 
+                                     6.无线滚动插件vue-infinite-loading
+                                     7.懒加载插件方法在main.js
+1.import VueLazyload from 'vue-lazyload';  // 引入图片懒加载模块
+2.// error，loading是图片路径, 用require引入
+Vue.use(VueLazyload, {
+    error: require('./assets/404.png'),
+    loading: require('./assets/loading.gif'),
+    attempt: 1
+  }
+);
+3.在需要的懒加载的图片上 <img v-lazy="aa.url" > 把：src改成v-lazy就可以了。很简单！
+
+                                     8.实现滑动效果的插件better-scroll
+
+                                     9.点赞： :class="{'dianzan-active': isDianzan}"
+    // 点赞事件
+    thumbUp: function() {
+      if (!this.isDianzan) {
+        this.$store.state.popularity++;
+      } else {
+        this.$store.state.popularity--;
+      }
+      this.isDianzan = !this.isDianzan;
+    },

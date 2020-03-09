@@ -1,0 +1,47 @@
+计算几个的方法对比：
+   getallmoney() {
+        this.total = 0;
+        this.tocount = 0;
+        this.tableData.forEach(iop => {
+          this.total += iop.price * iop.count;
+         this. tocount += iop.count;
+        })
+      },
+-----------------------------------------------------------------------------------------------------                                         方法一样：就是多一个判断是否选中才发生
+      getALLshopPrice() {
+        this.totalMoney = 0;
+        this.list.forEach(e => {
+          //判断商品是否被选中的时
+          if (e.checked) {
+            this.totalMoney += e.price * e.count;
+          }
+        });
+      },
+
+
+
+增加的方法对比：
+    addgoods(goods) {
+        let caoji = true;
+        this.tableData.forEach(cao => {
+          if (cao.goodsName == goods.goodsName) {
+            cao.count++;
+            caoji = false;
+          }
+        });
+        if (caoji) {
+          let diaoji = {count: 1, goodsName: goods.goodsName, price: goods.price};
+          this.tableData.push(diaoji)
+        }
+-----------------------------------------------------------------------------------------------------                                         方法比较：这个只是判断加号跟的点击事件
+
+   addCount(shop, way) {
+        if (way > 0) {
+          shop.count++;
+        } else {
+          if (shop.count <= 1) {
+            shop.count = 1;
+            return;
+          }
+          shop.count--;
+        }

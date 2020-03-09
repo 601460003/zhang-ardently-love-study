@@ -1,0 +1,68 @@
+重点就是：化整为零。每个页面拆开一个个小部件，重新组装起来。
+
+1.使用text-indent文本缩进调位置
+
+2.利用<i>占位设置背景图片
+
+3.发现页面并排多个元素时用<ul>操作
+
+4.按钮使用常用的<input>修改属性 vavul改名字，
+placeholder设置框内文体的内容
+美化：加上下左右的边距/文字的大小/行高/背景颜色/边框颜色/边框圆角/
+
+5.利用line-height与DIV高实现文体垂直居中
+
+6.绝对定位：z-index=数值越大就覆盖上面的元素。重叠时会发生的
+
+7.语义标签：就是标签用能通过英文看出来的 例如<h1>
+
+8.图片时内联元素。设置img样式vertical-align: middle;可以使文字对齐图片中间 定义： 行内元素 float失效
+如果文字是用div包住的话先让div{display:inline-box}在设置
+
+9.letter-spacing 文字间隔有时也是很好用的，比内间距好用 字体密密麻麻的时候用 只属于文字的属性值 其他无效
+
+10.浮动：很多页面的标题
+特别遇到（p、h）标签时，独占一行，又想浮动到右边时，
+让浮动元素顺序写在（p、h）上面，这样就可以占一个位置
+实现很多好看的小标题的效果了。
+
+11.水平居中margin：0 auto。很实用，就是内嵌一个带有宽的div
+
+12.input 里面可以添加背景图片 放大镜之类的。
+
+13.clear: both;如果第二紧挨的DIV不用这个，会跟着第一个左浮动。
+浮动占的位置太多了，一定要谨慎操作。
+指定不允许元素周围有浮动元素
+
+14.写价格设计图：一个div包含2个span通过修改样式
+首先设置DIV宽高。然后利用行高，居中，内边距把里面撑开1px
+最后用左浮动，保持水平并排。利用文字的宽撑开。完成效果
+
+15.导航栏可以这样写：
+使用ul下面可以分成4个li。 li里面可以内嵌多一个ul再用li！！
+最后第一个父ul直接使用flex布局，完美实现了导航栏。
+
+16.伪类after跟befor的使用方法 在文字前面添加符号。并且可以设置左右间距。
+
+17.，学会了背景图片使用background-position 来控制位置
+还有观察到相同的内容的时候，可以使用命名相同的class，这样可以省去很多样式的填写。
+公告栏more 可以是用float: right;下面是公告栏制作方法和左边小小的棕色竖杠。
+插入一个<I>标签设置样式height: 1em; border-right: 3px soli 就出来了
+
+18.利用span修改样式实现竖杠》display: inline-block;border-right:height: 10px;》
+
+19.div里面直接装字体 直接水平居中 做大标题用
+
+20.用span使文字垂直的效果就是样式display= block
+
+21.使用三件套使句子变成省...
+text overflow =ellipsis
+white space=nowrap
+overflow=hidden
+
+22.p文段三件套
+display: -webkit-box;
+overflow: hidden;
+text-overflow: ellipsis;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;

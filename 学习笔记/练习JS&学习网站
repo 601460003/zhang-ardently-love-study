@@ -1,0 +1,23 @@
+    let b=[];
+        this.tableData.forEach(a=>{
+          if(a.goodsName==e.goodsName){
+            if(a.count>1){
+              let  univalence=e.price/a.count;
+              a.count--;
+              debugger
+              b.push(a)
+            }
+          }else {
+            b.push(a)
+          }
+        })
+        this.tableData=b;
+        this. getallmoney();
+        1https://www.bilibili.com/video/av29885002/?p=2  带我入门的JS教学
+https://javascript.ruanyifeng.com/grammar/basic.html  JS基础语法
+2http://ifkdy.com/ 免费看电影
+3https://www.easy-mock.com/login 模拟数据API
+4https://youzan.github.io/vant/#/zh-CN/intro 有赞UI库
+5 技术胖https://jspang.com/post/vuedemo.html
+6微信小程序框架http://test.jxnewlife.com:3000/newlife/newlife_miniprogramme
+http://192.168.5.59:7001/swagger-ui.html  第一个项目的所有后端API

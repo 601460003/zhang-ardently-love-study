@@ -1,0 +1,42 @@
+获得http请求：
+终端下载 cnpm install vue-resource --save 
+下载好就在main.js引入
+import vueResource from 'vue-resource'
+Vue.ues(vueResource)
+
+
+methods:{
+
+created:function(){
+
+this,$http.get('ulr')
+.then(function(respose){
+this.user=respose.data;
+})
+}
+
+}
+
+   vue   深入浅出（从入门到精通） 视频完成。
+
+---------------------------------------------------------------------------------------------
+胖子的方法：第8节：Axios从远程读取数据
+终端下载npm install axios --save
+下载好就在main.js引入
+import  axios from 'axios';
+
+
+   created:function () {
+      axios.get('https://www.easy-mock.com/mock/5b8b30dbf032f03c5e71de7f/kuaican/oftenGoods')
+        .then(reponse=>{
+          this.oftenGoods=reponse.data;
+        })
+        .catch(error=>{
+          alert('网络错误，不能访问')
+        })
+    },
+---------------------------------------------------------------------------------------------vue2.0之后，就不再对vue-resource更新，而是推荐使用axios。基于 Promise 的 HTTP 请求客户端，可同时在浏览器和 Node.js 中使用。
+
+                        获取API后 用console.lop 打印出来 然后一层一层寻找想要的数据 找了很久我
+  console.log(reponse)
+              this.list=reponse.data.data.projects;一层一层知道找到里面为止

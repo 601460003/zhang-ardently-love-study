@@ -1,0 +1,31 @@
+
+
+addbrach(){
+    let indexArr = this.userDataTime.map(item => {
+        return item.mealname
+    })
+    let obj = {}
+    for (let i = 0; i < indexArr.length - 1; i++) {
+        for (let j = i + 1; i < indexArr.length - 1; j++) {
+            if (indexArr[i] == indexArr[j]) {
+                if (obj[indexArr[i]])
+                    obj[indexArr[i]] = obj[indexArr[i]] + ',' + j
+                else
+                    obj[indexArr[i]] = i + ',' + j
+            } else {
+                i = j
+                continue;
+            }
+        }
+    }
+    let rows = this.$refs['it'].$el.getElementsByClassName('ivu-table-row')
+    for (let k in obj) {
+        let str = obj[k].split(',')
+        str.forEach((item, index) => {
+            if (index == 0)
+                rows[item].children[0].setAttribute('rowspan', str.length)
+            else
+                rows[item].children[0].hidden = true
+        })
+    }
+},

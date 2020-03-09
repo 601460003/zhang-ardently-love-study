@@ -1,0 +1,6 @@
+只能是一行有效
+
+<nobr><p class="notice-content">强制标签</p></nobr>
+
+overflow: hidden;
+text-overflow: ellipsis;

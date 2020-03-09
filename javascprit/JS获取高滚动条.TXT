@@ -1,0 +1,43 @@
+1.获取元素 滚动条的高度
+this.$nextTick(function () {
+    this.leftHeight = this.$refs.app.scrollHeight
+})
+2.获取界面可视高度 let height = document.body.clientHeight
+3.获取当前滚动条的位置（记录滚东条位置）
+this.wrapperScrollTop = this.$refs.wrapper.scrollTop
+this.$refs.wrapper.scrollTop = this.wrapperScrollTop
+4.根据返回的日期排序
+this.tetdatesList.sort(function (a,b) {
+		return a.date>b.date? 1 : -1
+	})
+
+5.伪类 三天朋友圈
+.quote:before,.quote:after{
+        content: '';
+        display:inline-block;
+        width:5%;
+        margin:5px 1%;
+        border-bottom:1px solid #999;
+    }
+5.用于获取某个元素相对于视窗的位置集合,包括长宽高
+ // getBoundingClientRect()
+
+6. //下拉加载跟多  必须给父容器添加高度
+ 	    scrollEvent(e){
+ 		    // scrollEvent()只监听绑定的容器内
+ 		    if(e.srcElement.scrollTop+e.srcElement.offsetHeight>e.srcElement.scrollHeight-100&&!this.moreLoading&&!this.noMore){
+ 			    console.log(e.srcElement.scrollTop);//滚动条滚动距离
+ 			    console.log(e.srcElement.offsetHeight);//网页可见区域高 等于body的总高度
+ 			    console.log(e.srcElement.scrollHeight);//容器内容实际高度=整条滚动条高度
+ 			    this.next()
+ 		    }
+         },
+         next(){
+ 	    	this.index++
+ 	        this.moreLoading = true
+             this.userData.push(this.index)
+             setTimeout(()=>{
+ 	            this.moreLoading = false
+ 	            this.noMore = true
+             },2000)
+         },

@@ -1,0 +1,9 @@
+路由相当于以前的A便签跳转网页
+不过路由比a标签稳定
+path路由的路径跟地址  还有组件的名字component：××
+第二部组件的注册在路由js里面
+mode:'history'  //删除#号
+ 展示 <router-view/>
+还有不会跳转的路由代替A标签：
+<router-link to='/hellwoorld'>hello</router-link>
+to就是要去到的组件路径页面，无须刷新 已经加载号的了

@@ -1,0 +1,10 @@
+5.数据转换的方法
+5.1 字符串转换数组 let sortArr = item.tweek.split(',')
+5.2 转换后重新排序 newArr = sortArr.sort(function (a, b) {return a - b})
+5.3 根据数组下标 显示['', '周一', '周二', '周三', '周四', '周五', '周六', '周日'] (this.orderWeek[list] tempArr.push(this.orderWeek[list])
+5.4 将排好序的数组==》 转换为 字符串：obj.tetdates = tempArr.join(',')
+5.5 数组字符串 转换为数字数组 data.tweek.split(',').map(item => +item)
+5.6 map循环改变数据结构data.reserDay.map((e) => return {date: e.date + '', mseq: e.mseq.map(item => '' + item), week: e.week}
+5.7 一定要使用运算小括号 20191010格式转化为正常的日期2019-10-01 ('' + e.date).replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3")格式方便转换
+5.8 适当的时候转换为负值 - margin-right
+5.9 注意ref只能绑定一个，不能同时绑定

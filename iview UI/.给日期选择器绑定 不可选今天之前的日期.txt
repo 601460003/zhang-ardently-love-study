@@ -1,0 +1,8 @@
+1.给日期选择器绑定 不可选今天之前的日期
+<DatePicker :options="optionsEndTime"></DatePicker>
+optionsEndTime: {
+   disabledDate: (function (date) {
+      return date && date.valueOf() < Date.now() - 86400000;
+   })
+}
+

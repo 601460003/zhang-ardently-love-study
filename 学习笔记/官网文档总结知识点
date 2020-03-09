@@ -1,0 +1,78 @@
+1添加数组app4.todos.push({ text: '新项目' })
+2methods 存放方法
+3Vue 还提供了 v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定
+4props[username]改变父子通信的内容 变成动态的东西(自定义组件传参)
+5created创建生命周期钩子：作为组件加载的机会
+6Vue.js 都提供了完全的 JavaScript 表达式支持。
+
+                         关注重点！！
+
+7preventDefault()：该方法将通知 Web 浏览器不要执行与事件关联的默认动作
+8<a v-on:click="doSomething">...</a>缩写
+<a @click="doSomething">...</a>
+<a v-bind:href="url">...</a>
+<a :href="url">...</a>
+9计算属性。 computed：{return方法this.a+''+this.b}
+10我们可以传给 v-bind:class 一个对象，以动态地切换 class：
+可绑定多个v-bind:class="{ active: isActive, 'text-danger': hasError }" 
+
+数组语法：<div v-bind:class="[activeClass, errorClass]"></div>
+绑定内联样式：<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+直接绑定到一个样式对象通常更好，这会让模板更清晰：<div v-bind:style="styleObject"></div>
+
+11 v-else 元素必须紧跟在带 v-if 或者 v-else-if 的元素的后面，否则它将不会被识别。
+12不推荐同时使用 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级。
+
+13<li v-for="(item, index) in items">支持第二个索引index
+14 一个对象的v-for=value in object 可以提供第二个的参数为键名： {{ key }}: {{ value }}
+理想的 key 值是每项都有的唯一 id
+15数组更新检测：
+example1.items.push({ message: 'Baz' }) 
+方法：push pop shift unshift splice sort revrse
+！！删增官网实例演变很多视频！！
+
+15事件处理方法：v-on 还可以接收一个需要调用的方法参数。
+内联处理器中的方法：<button v-on:click="say('what')">Say what</button>
+修饰符：
+@click.stop：阻止单击事件继续传播
+submit.prevent：提交事件不再重载页面
+stop.prevent：修饰符可以串联
+<a v-on:click.once="doThis"></a>：只会触发一次
+
+16组件的复用 data必须是一个函数
+通过 Prop 向子组件传递数据
+通过插槽分发内容slot
+
+17在模块系统中局部注册
+import ComponentA from './ComponentA' 引入组件
+export default {导出组件}components:{名字}
+
+18 prop类型：
+props: {
+  title: String,
+  likes: Number,
+  isPublished: Boolean,
+  commentIds: Array,
+  author: Object
+}
+单向数据流：次父级组件发生更新时，子组件中所有的 prop 都将会刷新为最新的值
+
+19明天自定义事件开始
+$emit：子组件可以使用 $emit 触发父组件的自定义事件。
+命名：始终使用 kebab-case 的事件名
+Math.round()的取整规则
+20 插槽slot的作用就是一个组件内容套到其他组件上
+21我们之前曾经在一个多标签的界面中使用 is 特性来切换不同的组件：
+<component v-bind:is="currentTabComponent"></component>
+22可以用一个 <keep-alive> 元素将其动态组件包裹起来： 失活的组件将会被缓存
+
+23mixins：合并共用的方法定义var base={} mixins：[base]非常棒！非常好用 明确表明的会覆盖方法
+24created 方法是在页面渲染时候调用的 ；
+method 中的方法是在页面渲染后调用的 ；
+
+25钩子函数就是一种过滤机制，满足就执行(挂钩)，不满足就不执行。
+26 过滤器{{ message | capitalize }}
+定义一个filters：
+
+
+27学完了VUE

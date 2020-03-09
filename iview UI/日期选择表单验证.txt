@@ -1,0 +1,55 @@
+
+
+1.遇到的问题
+在使用iview框架时，在后端管理系统中，通常会使用到form表单组件，当然日期也通常出现在搜索
+框表单中，但是有时候会出现日期组件校验错误的情况
+
+
+2.问题分析
+首先，iview采用的是async-validator的校验规则，根据规则校验类型type值一般分为以下几种：
+
+
+string、method、number、boolean、array、object、date、integer、float、regexp、email、url、
+    hex；
+
+
+其次，大家都知道日期组件一般肯定想到的是 type="date"  ,先看下日期组件值的value类型，可以
+    自己打印看下；
+    
+第一种情况： 单选日期（只有一个日期）, value值为：“2019-06-10”；
+
+
+第二种情况： 多选日期（只有一个日期）, value值为：["2019-06-10","2019-06-12"]，未选中
+            
+值时默认的结构为[" "," " ]；
+            由此可以看出，如果仅仅用一个 type: "array",来校验多选日期肯定是无效的，
+因为默认虽然是
+空，但是值的结构是一个数组，怎么校验都是真。所以我们需要对每个子元素进行校验；    
+
+
+3.解决问题
+通过分析，我们发现，表单校验时，我们需要选择和日期的值相匹配的类型，
+当日期单选时我们可以选择：type:"date",
+当日期多选时，我们需要对每一个子元素添加校验（fields）代码如下:
+{ required: true, type: 'array',
+
+
+fields:{
+0:{required: true, type:'date',message: '有效期不能为空', trigger: 'change'},
+
+
+1:{required: true, type:'date',message: '有效期不能为空', trigger: 'change'}
+            },
+    
+        trigger: 'change'},
+
+
+4.还没完全解决问题，就是修改的时候，后台返回的数据不能直接作为 验证标准，点就保存的时候就会发生 data is no function obj
+  此时需要做的是  后台返回的数据 放在new Date 里面 这样才转换成验证的 type =date
+
+
+完美解决这个表单验证。还有想到了 修改时，把清楚日期的功能去掉，防止出现 用户不传日期的情况，必须修改！
+
+
+
+

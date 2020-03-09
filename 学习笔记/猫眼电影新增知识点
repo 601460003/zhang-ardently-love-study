@@ -1,0 +1,37 @@
+第一个知识点
+window.history.go(-1)表示后退与刷新。如数据有改变也随之改变
+history.back()只是单纯的返回到上一页。
+第二个路由想跳到的页面
+ <router-link to="/inTheaters" class="v-nav">正在热映</router-link>
+
+按input跳到路由指定地址时：必须在路由JS引入组件并且注册imort。。
+
+第三 ：组件化开发
+把一些公用的组件 作为引入其他跳转页面当中 哪里引入就写哪里
+  import vHeader from '../components/HelloWorld' 引用后就注册
+  components: {
+      'v-header': vHeader,
+    },
+
+第四：点击事件
+    serch () {
+        this.$router.push({path: '/searchPage'})
+   点击push到想到的页面
+
+第五：id绑定电影信息
+ methods: {
+      str=tiem.id
+    showMoreMsg: function (str) {
+      const path = '/movie/' + str
+      this.$router.push({path: path})
+    }
+
+第六：新建路由参数
+新建组件 的路径就是： path: '/组件/:id' 
+获取里面的信息 id:this.$route.params.id
+  this.$http.jsonp(id)
+        .then(function (response) {
+          _this.movieMsg = response.body
+.params是 route的属性,用来储存数据的键值对.就是说它对象,储存很多属性(键值对,属性,属性值)在里面
+
+                           《重点还是路由的使用参数》

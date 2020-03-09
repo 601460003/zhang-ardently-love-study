@@ -1,0 +1,11 @@
+
+
+<Table border :columns="columns2" :data="ClassList.slice((currentPage1-1)*pagesize,currentPage1*pagesize)" ></Table>
+
+
+<Page  style="position:absolute;float:right;right:30px;z-index: 1999"
+     :current.sync="currentPage1"
+     :total="dataCount1"
+     show-total>
+   <div>当前显示 <b>{{ClassList.slice((currentPage1-1)*pagesize,currentPage1*pagesize).length}}</b> 条记录，共 <b> {{dataCount1}} </b>条记录</div>
+</Page>

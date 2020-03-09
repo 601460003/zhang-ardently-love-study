@@ -1,0 +1,77 @@
+:value="JSON.stringify(item)"  下拉框获取lable 和整个对象
+由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
+...new Set(fruits) 前面加。。。运算符
+includes()判断一个数组是否含有一个值
+yyyyMMdd格式转换正常格式 正则.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3")
+eval("(" + attWeekMap + ")") 这种方式直接将字符串JSON格式转换为对象
+深度拷贝--不影响原对象的方法 ：方案二：JSON.parse(JSON.stringify(obj))
+写组件就像是造人,捡来树枝作出骨骼,拾起泥料作出皮肤,最后再给上一口的仙气
+ import * as allObj from '@/api/data' 这语法可以引入多个模块
+console.dir（）打印绑定refs 对象信息
+console.table（）打印数组信息
+堆积木 1.拼接ui  2.点击方法  3.刷新ui
+!!把所有基本类型转化为布尔值
+
+ 数组去重的新方法
+	      let a = users.reduce((obj, value) => {
+		        obj[value.id] = value
+		        return obj
+	        }, [])
+
+**需要判断页面是在前进还是后退
+let toDepth = to.path.split('/').length
+let fromDepth = from.path.split('/').length
+if (toDepth < fromDepth) {
+  // console.log('后退。。。')
+  from.meta.keepAlive = false
+  to.meta.keepAlive = true
+}
+
+1.数组原生方法触发视图更新:
+2.它会为组件中所有的标签和class样式添加一个scoped标识，就像上面结果中的data-v-1b971ada。（去掉该组件的scoped）
+所以原因就很清楚了：因为动态添加的dom没有scoped添加的标识，没有跟testAdd的样式匹配起来，导致样式失效。
+
+package.json文件只能锁定大版本，即版本号的第一位，不能锁定后面的小版本，你每次npm install时候拉取的该大版本下面最新的版本，可能有些童鞋之前就踩过类似的坑。
+一般为了稳定性考虑我们不能随意升级依赖包，因为如果换包导致兼容性bug出现很难排查，所以package-lock.json就是来解决包锁定不升级问题的。
+
+
+    *nginx
+正向代理和反向代理的区别：1、正向代理：类似我们想要访问国外的Google服务器，但是由于访问限制，我们需要找一个代理去访问。换句话说，客户端明确知道要访问的服务器的地址，
+客户端把请求发送给代理，代理转发给服务器，服务器把响应传给代理，最后代理把响应传给客户端。我们可以看到客户端知道服务器是谁，但是服务器并不知道客户端是谁，这就是正向代理，
+隐藏了客户端的真实信息。2、反向代理：类似我们访问淘宝，由于访问量巨大，淘宝会使用许多台服务器（就是分布式服务器）来支持，但是每个客户端的请求到底由哪一台服务器来响应，我们需要一个代理来决定。
+换句话说，客户端并不知道要把请求发送给哪一台服务器，但是知道发送给哪一个代理，然后代理依据规则（响应时间，负载均衡等）决定把请求转发给哪一台服务器。可以看到，客户端并不知道他访问的服务器是谁，
+这就是反向代理，隐藏了服务器的真实信息。
+
+                   *组件化
+['wrapper',{'group-item':true,'wrapper-checked':false}] --官方写法
+// 判断参数是否是其中之一
+export function oneOf (value, validList) {
+    for (let i = 0; i < validList.length; i++) {
+        if (value === validList[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+         1.稳健的静态页面
+         2.抽取可变的样式利用props属性{} 定义默认值
+         3.根据计算属性computed缓存机制优化代码 直接动态变更样式
+         4.通过$emit实现父子之间的事件参数调用
+      组件化是对实现的分层，是更有效地代码组合方式
+    组件化是对资源的重组和优化，从而使项目资源管理更合理
+    组件化有利于单元测试
+    组件化对重构较友好
+ 
+     判断任何数据类型
+typeOf(data) {
+	let toString = Object.prototype.toString;
+	let dataType = data instanceof Element ? "element" : toString.call(data).replace(/\[object\s(.+)\]/, "$1").toLowerCase()
+	return dataType
+},
+
+打印带样式的文本
+let info = "百度2020校园招聘简历提交：http://dwz.cn/XpoFdepe";
+			console.log("%c" + info + ":", "color: red;padding-top: 10px")
+
+
+

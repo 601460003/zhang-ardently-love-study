@@ -1,0 +1,10 @@
+1.看到可以替换的数据：v-for
+2.金额￥19.00元：filter
+3.看到输入框：v-model
+4.一些操作：v-on:click=""或 @click=""
+5.样式变化：v-bind:class="{}"或 :class="{}"
+6.v-for中可嵌套v-for
+7.vue.set添加一个本身没有的变量
+8.vue.resource插件 支持get,post,delete,put,jsonp 但现在官方推荐axios
+9.computed的使用
+10。ES6的语法学习 大势所趋

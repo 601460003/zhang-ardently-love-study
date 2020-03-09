@@ -1,0 +1,71 @@
+﻿v-model：双向绑定内容，可以直接在页面修改里面的文体
+v-show: 显示或隐藏元素，如果里面值存在，则显示，没有则隐藏(永远存在)
+v-if:也是显示隐藏的意思。区别如果是false 直接在页面不显示代码。
+
+v-for:专门用来循环数组里面的东西用for in循环执行。可以随时添加数组里面的内容
+v-bind:绑定数据属性的 比如网址跟图片，把静态的属性变成动态的。所有的属性都可以（包含class）
+active： isActive：ture，获得效果 如果是false，则不显示效果。isActive随意值。
+
+v-on：一看就知道用来绑定事件的。@click='函数'/
+不是定义在data里面 而是定义在methods里面一个点击事件函数
+function作为一个方法放进里面 作为事件的调用！
+一个元素绑定多个对象v-on="{mouseenter:inEnter,mouseleave:onOut}
+让事件绑定如此简单
+表单提交
+prevent  跟stop  都是阻止事件刷新 
+键盘事件：@keyup。enter=‘事件’
+
+v-model.lazy:不会马上显示效果 会隔一点时间
+v-model.trim：html打空格会无效
+v-model.nunber：全部默认转换数字类型
+
+---------------------------------------------------------------------------------------------------
+
+v-model可以再多行文字里面使用
+单选框：设置默认值在data里面
+复选框：
+textarea：
+select：
+
+
+控制流指令
+计算属性 添加修饰符：v-model.nunber全部取数字
+computed属性利用函数添加方法及调用
+sum、averager
+取整Math.round
+
+
+---------------------------------------------------------------------------------------------------
+
+为了开发方便 定义一些常用的组件
+作用域 给他一个
+定义一个Vue.component
+用变量保存一个component
+
+component：定义组件
+template：定义模版
+props：里面放一个数组内容（用于父子之间的数据传递）
+methods：定义一个方法
+
+
+
+---------------------------------------------------------------------------------------------------
+mixins[base]
+
+   methods: {
+      onclick(food) {
+        if(food.checked){
+          var list = this.foodList
+          for (var i = 0; i < list.length; i++) {
+            if (food.id == list[i].id) {
+              list[i].checked = false
+            }
+          }
+       }else {
+          var list = this.foodList
+          for (var i = 0; i < list.length; i++) {
+            if (food.id == list[i].id) {
+              list[i].checked = true
+            }
+          }
+用for找出想要的東西 判斷
